@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'details_splash_view_section.dart';
-import 'splash_image_section.dart';
+import '../../../../../core/utils/app_assets.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({
@@ -31,26 +29,28 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SplashImageSection(
-          sliderAnimation: offsetAnimation,
-        ),
-        const SizedBox(height: 22),
-        DetailsSplashViewSection(
-          slideAnimation: offsetAnimation,
-        ),
+        AnimatedBuilder(
+            animation: offsetAnimation,
+            builder: (context, _) {
+              return SlideTransition(
+                position: offsetAnimation,
+                child: Image.asset(AppAssets.logo),
+              );
+            }),
       ],
     );
   }
 
   void initialSlideAnimation() {
     animationController = AnimationController(
-      duration: const Duration(seconds: 3),
+      duration: const Duration(seconds: 1),
       vsync: this,
     );
     offsetAnimation = Tween<Offset>(
-      begin: const Offset(2, 0),
+      begin: const Offset(0, 1),
       end: Offset.zero,
     ).animate(animationController);
     animationController.forward();
