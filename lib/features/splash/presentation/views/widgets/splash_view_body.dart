@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:islamic_app/core/utils/app_routes.dart';
 import '../../../../../core/utils/app_assets.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -18,6 +20,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   void initState() {
     initialSlideAnimation();
+
+    navigateToHome();
+
     super.initState();
   }
 
@@ -54,5 +59,11 @@ class _SplashViewBodyState extends State<SplashViewBody>
       end: Offset.zero,
     ).animate(animationController);
     animationController.forward();
+  }
+
+  void navigateToHome() {
+    Future.delayed(const Duration(seconds: 2)).then(
+      (value) => GoRouter.of(context).pushReplacement(AppRouter.kHomeView),
+    );
   }
 }
