@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'custom_surah_name_and_index.dart';
 import 'last_read_quran.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -7,12 +7,27 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Column(
         children: [
-          SizedBox(height: 45),
-          LastReadQuran(),
+          const SizedBox(height: 45),
+          const LastReadQuran(),
+          const SizedBox(height: 35),
+          // Text(
+          //   'Surah',
+          //   style: GoogleFonts.montserrat(
+          //     textStyle: Styles.textStyle16,
+          //   ),
+          // ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: 10,
+              itemBuilder: (context, index) {
+                return const CustomSurahNameAndIndex();
+              },
+            ),
+          ),
         ],
       ),
     );
