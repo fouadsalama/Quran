@@ -13,7 +13,7 @@ class HomeView extends StatelessWidget {
       appBar: AppBar(
         title: const Center(
           child: Text(
-            'Hafiz',
+            'Quran',
             style: Styles.textStyle20,
           ),
         ),

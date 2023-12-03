@@ -58,11 +58,11 @@ class _SplashViewBodyState extends State<SplashViewBody>
       begin: const Offset(0, 1),
       end: Offset.zero,
     ).animate(animationController);
-    animationController.forward();
+    animationController.fling();
   }
 
   void navigateToHome() {
-    Future.delayed(const Duration(seconds: 3)).then(
+    Future.delayed(const Duration(seconds: 2)).then(
       (value) => GoRouter.of(context).pushReplacement(AppRouter.kHomeView),
     );
   }
