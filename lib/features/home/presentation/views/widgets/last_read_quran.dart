@@ -23,6 +23,12 @@ class LastReadQuran extends StatelessWidget {
           end: Alignment.bottomRight,
         ),
         borderRadius: BorderRadius.circular(23),
+        image: const DecorationImage(
+          fit: BoxFit.cover,
+          image: AssetImage(
+            AppAssets.shadow,
+          ),
+        ),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
