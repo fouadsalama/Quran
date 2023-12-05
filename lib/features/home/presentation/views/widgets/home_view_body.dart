@@ -14,12 +14,6 @@ class HomeViewBody extends StatelessWidget {
           const SizedBox(height: 45),
           const LastReadQuran(),
           const SizedBox(height: 35),
-          // Text(
-          //   'Surah',
-          //   style: GoogleFonts.montserrat(
-          //     textStyle: Styles.textStyle16,
-          //   ),
-          // ),
           Expanded(
             child: ListView.builder(
               itemCount: 10,
