@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:islamic_app/core/utils/app_routes.dart';
 import 'package:islamic_app/core/utils/styles.dart';
 
 import 'widgets/custom_app_bar_ico.dart';
@@ -28,7 +30,9 @@ class HomeView extends StatelessWidget {
             icon: const CustomAppBarIcons(
               image: 'assets/images/search.png',
             ),
-            onPressed: () {},
+            onPressed: () {
+              GoRouter.of(context).push(AppRouter.kSearchView);
+            },
           )
         ],
       ),

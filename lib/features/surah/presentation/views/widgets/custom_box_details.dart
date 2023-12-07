@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-
 import '../../../../../core/utils/app_assets.dart';
 import '../../../../../core/utils/styles.dart';
 
@@ -16,20 +15,23 @@ class CustomBoxDetails extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.only(top: 47),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'الفاتحه',
-                style: Styles.textStyle24.copyWith(
-                  fontSize: 32,
+          child: GestureDetector(
+            onTap: () {},
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'الفاتحه',
+                  style: Styles.textStyle24.copyWith(
+                    fontSize: 32,
+                  ),
                 ),
-              ),
-              const Icon(
-                Icons.expand_more,
-                color: Colors.white,
-              )
-            ],
+                const Icon(
+                  Icons.expand_more,
+                  color: Colors.white,
+                )
+              ],
+            ),
           ),
         ),
         const Padding(
