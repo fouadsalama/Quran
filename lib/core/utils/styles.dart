@@ -4,7 +4,7 @@ import 'package:islamic_app/constants.dart';
 abstract class Styles {
   static const textStyle20 = TextStyle(
     fontSize: 20,
-    color: Color(0xff004B40),
+    color: kPrimaryColor,
     fontWeight: FontWeight.bold,
   );
   static const textStyle24 = TextStyle(
@@ -23,6 +23,8 @@ abstract class Styles {
     color: kTextColor,
     fontWeight: FontWeight.bold,
   );
-  static const textStyle14 =
-      TextStyle(fontSize: 14, fontWeight: FontWeight.w400);
+  static const textStyle14 = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+  );
 }

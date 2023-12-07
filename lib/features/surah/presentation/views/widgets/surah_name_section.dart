@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-
 import '../../../../../core/utils/app_assets.dart';
+import 'custom_arrow_back_icon.dart';
 import 'custom_box_details.dart';
 import 'custom_shadow.dart';
 
@@ -41,18 +40,7 @@ class SurahNameSection extends StatelessWidget {
           ),
           child: const CustomBoxDetails(),
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 47),
-          child: IconButton(
-            onPressed: () {
-              GoRouter.of(context).pop();
-            },
-            icon: const Icon(
-              Icons.arrow_back,
-              color: Colors.white,
-            ),
-          ),
-        ),
+        const CustomArrowBackIcon(),
         const CustomShadow(),
       ],
     );
