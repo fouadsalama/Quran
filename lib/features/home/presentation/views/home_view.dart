@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islamic_app/core/utils/styles.dart';
 import 'widgets/custom_app_bar_ico.dart';
 import 'widgets/home_view_body.dart';
+import 'widgets/menu_drawer.dart';
 
 class HomeView extends StatelessWidget {
   HomeView({super.key});
@@ -10,18 +11,23 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: const IconThemeData(color: Color(0xff888888)),
         title: const Center(
           child: Text(
             'Quran',
             style: Styles.textStyle20,
           ),
         ),
-        leading: IconButton(
-          icon: const CustomAppBarIcons(
-            image: 'assets/images/menu.png',
-          ),
-          onPressed: () {},
-        ),
+        leading: Builder(builder: (context) {
+          return IconButton(
+            icon: const CustomAppBarIcons(
+              image: 'assets/images/menu.png',
+            ),
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          );
+        }),
         actions: [
           IconButton(
             icon: const CustomAppBarIcons(
@@ -37,6 +43,7 @@ class HomeView extends StatelessWidget {
         ],
       ),
       body: const HomeViewBody(),
+      drawer: const MenuDrawer(),
     );
   }
 }
