@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:islamic_app/core/utils/app_routes.dart';
 import 'package:islamic_app/core/utils/styles.dart';
-
 import 'widgets/custom_app_bar_ico.dart';
 import 'widgets/home_view_body.dart';
 
 class HomeView extends StatelessWidget {
-  const HomeView({super.key});
-
+  HomeView({super.key});
+  final List<String> data = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,12 +28,71 @@ class HomeView extends StatelessWidget {
               image: 'assets/images/search.png',
             ),
             onPressed: () {
-              GoRouter.of(context).push(AppRouter.kSearchView);
+              showSearch(
+                context: context,
+                delegate: CustomSearchDelegate(data),
+              );
             },
           )
         ],
       ),
       body: const HomeViewBody(),
+    );
+  }
+}
+
+class CustomSearchDelegate extends SearchDelegate<String> {
+  final List<String> data;
+
+  CustomSearchDelegate(this.data);
+
+  @override
+  List<Widget> buildActions(BuildContext context) {
+    return [
+      IconButton(
+        icon: const Icon(Icons.clear),
+        onPressed: () {
+          query = '';
+        },
+      ),
+    ];
+  }
+
+  @override
+  Widget buildLeading(BuildContext context) {
+    return IconButton(
+      icon: const Icon(Icons.arrow_back),
+      onPressed: () {
+        Navigator.pop(context);
+      },
+    );
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    return buildSearchResults(query);
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    return buildSearchResults(query);
+  }
+
+  Widget buildSearchResults(String query) {
+    final List<String> filteredResults = data
+        .where((item) => item.toLowerCase().contains(query.toLowerCase()))
+        .toList();
+
+    return ListView.builder(
+      itemCount: filteredResults.length,
+      itemBuilder: (context, index) {
+        return ListTile(
+          title: Text(filteredResults[index]),
+          onTap: () {
+            close(context, filteredResults[index]);
+          },
+        );
+      },
     );
   }
 }

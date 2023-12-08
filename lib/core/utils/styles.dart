@@ -27,4 +27,8 @@ abstract class Styles {
     fontSize: 14,
     fontWeight: FontWeight.w400,
   );
+  static const labelTextFiledStyle = TextStyle(
+    fontSize: 12,
+    color: kPrimaryColor,
+  );
 }
