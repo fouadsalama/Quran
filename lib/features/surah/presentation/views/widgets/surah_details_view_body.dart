@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'surah_body.dart';
+import 'custom_surah_list_view.dart';
+
 import 'surah_name_section.dart';
 
 class SurahDetailsViewBody extends StatelessWidget {
@@ -8,18 +9,11 @@ class SurahDetailsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [
-        const SurahNameSection(),
-        const Gap(39),
-        Expanded(
-          child: ListView.builder(
-            itemCount: 10,
-            itemBuilder: (context, index) {
-              return const SurahBody();
-            },
-          ),
-        ),
+        SurahNameSection(),
+        Gap(39),
+        CustomSurahListView(),
       ],
     );
   }

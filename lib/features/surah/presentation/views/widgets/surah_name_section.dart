@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../../core/utils/app_assets.dart';
-import 'custom_arrow_back_icon.dart';
+import 'custom_surah_details_icons.dart';
 import 'custom_box_details.dart';
 import 'custom_shadow.dart';
 
@@ -40,7 +40,7 @@ class SurahNameSection extends StatelessWidget {
           ),
           child: const CustomBoxDetails(),
         ),
-        const CustomArrowBackIcon(),
+        const CustomSurahDetailsIcons(),
         const CustomShadow(),
       ],
     );
