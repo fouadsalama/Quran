@@ -13,6 +13,7 @@ class LastReadQuran extends StatelessWidget {
     return Stack(
       children: [
         Container(
+          margin: const EdgeInsets.symmetric(horizontal: 24),
           height: 170,
           width: 345,
           decoration: BoxDecoration(

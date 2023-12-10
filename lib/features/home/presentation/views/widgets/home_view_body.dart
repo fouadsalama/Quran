@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+import 'package:islamic_app/core/widgets/custom_app_bar.dart';
+
 import 'custom_surah_name_list_view.dart';
 import 'last_read_quran.dart';
 
@@ -7,14 +10,19 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24),
+    final List<String> data = [
+      'Al-Faatiha',
+      " Al-Baqara",
+      'سُورَةُٱلْفَاتِحَةِ'
+    ];
+    return SafeArea(
       child: Column(
         children: [
-          SizedBox(height: 45),
-          LastReadQuran(),
-          SizedBox(height: 35),
-          CustomSurahNameListView(),
+          CustomAppBarWidgets(data: data),
+          const Gap(45),
+          const LastReadQuran(),
+          const Gap(35),
+          const CustomSurahNameListView(),
         ],
       ),
     );

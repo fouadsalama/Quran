@@ -31,4 +31,8 @@ abstract class Styles {
     fontSize: 12,
     color: kPrimaryColor,
   );
+  static const textStyle30 = TextStyle(
+    fontSize: 30,
+    letterSpacing: 1.5,
+  );
 }

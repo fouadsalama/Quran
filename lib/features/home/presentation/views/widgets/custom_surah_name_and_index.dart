@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islamic_app/core/utils/app_routes.dart';
@@ -20,7 +21,7 @@ class CustomSurahNameAndIndex extends StatelessWidget {
           child: Row(
             children: [
               const SurahIndex(),
-              const SizedBox(width: 19),
+              const Gap(19),
               Expanded(
                 child: ListTile(
                   title: const Text(
@@ -47,7 +48,6 @@ class CustomSurahNameAndIndex extends StatelessWidget {
             ],
           ),
         ),
-        const Divider(color: Color(0xffD9D8D8)),
       ],
     );
   }

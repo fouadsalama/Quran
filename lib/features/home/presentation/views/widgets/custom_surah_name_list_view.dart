@@ -10,11 +10,21 @@ class CustomSurahNameListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: ListView.builder(
-        itemCount: 10,
-        itemBuilder: (context, index) {
-          return const CustomSurahNameAndIndex();
-        },
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24),
+        child: ListView.builder(
+          itemCount: 10,
+          itemBuilder: (context, index) {
+            return const Column(
+              children: [
+                CustomSurahNameAndIndex(),
+                Divider(
+                  color: Color(0xffD9D8D8),
+                ),
+              ],
+            );
+          },
+        ),
       ),
     );
   }

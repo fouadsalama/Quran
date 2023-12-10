@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:islamic_app/core/utils/app_assets.dart';
+import 'package:islamic_app/core/utils/app_routes.dart';
 
 import '../../../../../core/utils/styles.dart';
 import 'custom_drawer_list_tile.dart';
@@ -52,7 +53,9 @@ class MenuDrawer extends StatelessWidget {
           CustomDrawerListTile(
             title: 'Bookmarks',
             icon: Icons.menu_book,
-            onTap: () {},
+            onTap: () {
+              GoRouter.of(context).push(AppRouter.kBookmarksView);
+            },
           ),
           CustomDrawerListTile(
             title: 'Settings',
