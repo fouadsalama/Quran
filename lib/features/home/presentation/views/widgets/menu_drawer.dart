@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:islamic_app/constants.dart';
 import 'package:islamic_app/core/utils/app_assets.dart';
 
 import '../../../../../core/utils/styles.dart';
+import 'custom_drawer_list_tile.dart';
 
 class MenuDrawer extends StatelessWidget {
   const MenuDrawer({
@@ -42,24 +42,21 @@ class MenuDrawer extends StatelessWidget {
               ],
             ),
           ),
-          ListTile(
-            leading: const Icon(
-              Icons.home,
-              color: kPrimaryColor,
-            ),
-            title: const Text(
-              'Home',
-            ),
+          CustomDrawerListTile(
+            title: 'Home',
+            icon: Icons.home,
             onTap: () {
               GoRouter.of(context).pop();
             },
           ),
-          ListTile(
-            leading: const Icon(
-              Icons.settings,
-              color: kPrimaryColor,
-            ),
-            title: const Text('Settings'),
+          CustomDrawerListTile(
+            title: 'Bookmarks',
+            icon: Icons.menu_book,
+            onTap: () {},
+          ),
+          CustomDrawerListTile(
+            title: 'Settings',
+            icon: Icons.settings,
             onTap: () {},
           ),
         ],
