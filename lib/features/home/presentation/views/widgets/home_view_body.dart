@@ -15,16 +15,15 @@ class HomeViewBody extends StatelessWidget {
       " Al-Baqara",
       'سُورَةُٱلْفَاتِحَةِ'
     ];
-    return SafeArea(
-      child: Column(
-        children: [
-          CustomAppBarWidgets(data: data),
-          const Gap(45),
-          const LastReadQuran(),
-          const Gap(35),
-          const CustomSurahNameListView(),
-        ],
-      ),
+    return Column(
+      children: [
+        const Gap(30),
+        CustomAppBarWidgets(data: data),
+        const Gap(45),
+        const LastReadQuran(),
+        const Gap(35),
+        const CustomSurahNameListView(),
+      ],
     );
   }
 }

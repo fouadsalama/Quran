@@ -16,7 +16,35 @@ class CustomBoxDetails extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(top: 47),
           child: GestureDetector(
-            onTap: () {},
+            onTap: () {
+              showMenu(
+                context: context,
+                position: const RelativeRect.fromLTRB(150, 100, 200, 500),
+                items: [
+                  const PopupMenuItem(
+                    child: Text('Al-Faatiha'),
+                  ),
+                  const PopupMenuItem(
+                    child: Text('data'),
+                  ),
+                  const PopupMenuItem(
+                    child: Text('data'),
+                  ),
+                  const PopupMenuItem(
+                    child: Text('data'),
+                  ),
+                  const PopupMenuItem(
+                    child: Text('data'),
+                  ),
+                  const PopupMenuItem(
+                    child: Text('data'),
+                  ),
+                  const PopupMenuItem(
+                    child: Text('data'),
+                  ),
+                ],
+              );
+            },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
