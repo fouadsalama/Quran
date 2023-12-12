@@ -25,36 +25,32 @@ class CustomSurahDetailsIcons extends StatelessWidget {
               color: Colors.white,
             ),
           ),
-          IconButton(
-            onPressed: () {
-              showMenu(
-                context: context,
-                position: const RelativeRect.fromLTRB(100, 75, 25, 10),
-                items: [
-                  PopupMenuItem(
-                    child: ListTile(
-                      leading: Icon(
-                        Icons.bookmark_border_outlined,
-                        color: kPrimaryColor.withOpacity(0.6),
-                      ),
-                      title: Text(
-                        'Bookmark',
-                        style: GoogleFonts.montserrat(
-                          textStyle: Styles.textStyle16.copyWith(
-                            color: kPrimaryColor.withOpacity(0.8),
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              );
-            },
+          PopupMenuButton(
+            position: PopupMenuPosition.under,
             icon: const Icon(
               Icons.more_vert,
               color: Colors.white,
             ),
+            onSelected: (value) {},
+            itemBuilder: (context) => [
+              PopupMenuItem(
+                child: ListTile(
+                  leading: Icon(
+                    Icons.bookmark_border_outlined,
+                    color: kPrimaryColor.withOpacity(0.6),
+                  ),
+                  title: Text(
+                    'Bookmark',
+                    style: GoogleFonts.montserrat(
+                      textStyle: Styles.textStyle16.copyWith(
+                        color: kPrimaryColor.withOpacity(0.8),
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),

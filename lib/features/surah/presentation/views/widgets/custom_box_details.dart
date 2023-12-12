@@ -3,11 +3,18 @@ import 'package:gap/gap.dart';
 import '../../../../../core/utils/app_assets.dart';
 import '../../../../../core/utils/styles.dart';
 
-class CustomBoxDetails extends StatelessWidget {
+class CustomBoxDetails extends StatefulWidget {
   const CustomBoxDetails({
     super.key,
   });
 
+  @override
+  State<CustomBoxDetails> createState() => _CustomBoxDetailsState();
+}
+
+bool isSelected = false;
+
+class _CustomBoxDetailsState extends State<CustomBoxDetails> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -15,51 +22,40 @@ class CustomBoxDetails extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.only(top: 47),
-          child: GestureDetector(
-            onTap: () {
-              showMenu(
-                context: context,
-                position: const RelativeRect.fromLTRB(150, 100, 200, 500),
-                items: [
-                  const PopupMenuItem(
-                    child: Text('Al-Faatiha'),
-                  ),
-                  const PopupMenuItem(
-                    child: Text('data'),
-                  ),
-                  const PopupMenuItem(
-                    child: Text('data'),
-                  ),
-                  const PopupMenuItem(
-                    child: Text('data'),
-                  ),
-                  const PopupMenuItem(
-                    child: Text('data'),
-                  ),
-                  const PopupMenuItem(
-                    child: Text('data'),
-                  ),
-                  const PopupMenuItem(
-                    child: Text('data'),
-                  ),
-                ],
-              );
-            },
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'الفاتحه',
-                  style: Styles.textStyle24.copyWith(
-                    fontSize: 32,
-                  ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'الفاتحه',
+                style: Styles.textStyle24.copyWith(
+                  fontSize: 32,
                 ),
-                const Icon(
-                  Icons.expand_more,
-                  color: Colors.white,
-                )
-              ],
-            ),
+              ),
+              PopupMenuButton(
+                  position: PopupMenuPosition.under,
+                  icon: Icon(
+                    isSelected == false ? Icons.expand_more : Icons.expand_less,
+                    color: Colors.white,
+                  ),
+                  onOpened: () {
+                    setState(() {
+                      isSelected = true;
+                    });
+                  },
+                  onCanceled: () {
+                    setState(() {
+                      isSelected = false;
+                    });
+                  },
+                  itemBuilder: (context) => [
+                        const PopupMenuItem(
+                          child: Text('Al-Faatiha'),
+                        ),
+                        const PopupMenuItem(
+                          child: Text('data'),
+                        ),
+                      ])
+            ],
           ),
         ),
         const Padding(

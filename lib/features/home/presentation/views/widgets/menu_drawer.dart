@@ -60,7 +60,9 @@ class MenuDrawer extends StatelessWidget {
           CustomDrawerListTile(
             title: 'Settings',
             icon: Icons.settings,
-            onTap: () {},
+            onTap: () {
+              GoRouter.of(context).push(AppRouter.kSettingsView);
+            },
           ),
         ],
       ),
