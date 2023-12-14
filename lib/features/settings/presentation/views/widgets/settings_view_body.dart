@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
-import 'package:islamic_app/core/utils/app_routes.dart';
 import 'package:islamic_app/core/utils/styles.dart';
 
 import 'custom_setting_view_item.dart';
@@ -20,7 +19,7 @@ class SettingsViewBody extends StatelessWidget {
             children: [
               IconButton(
                 onPressed: () {
-                  GoRouter.of(context).push(AppRouter.kHomeView);
+                  GoRouter.of(context).pop();
                 },
                 icon: const Icon(Icons.arrow_back),
               ),
