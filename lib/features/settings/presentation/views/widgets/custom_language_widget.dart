@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../../../core/utils/styles.dart';
 
 class CustomLanguageWidget extends StatelessWidget {
@@ -26,10 +25,7 @@ class CustomLanguageWidget extends StatelessWidget {
         ),
         child: Text(
           text,
-          style: Styles.textStyle24.copyWith(
-            color: Colors.black,
-            fontWeight: FontWeight.w400,
-          ),
+          style: Styles.textStyle18,
         ),
       ),
     );

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:islamic_app/core/utils/app_routes.dart';
 import 'package:islamic_app/core/utils/styles.dart';
 
 import 'custom_setting_view_item.dart';
@@ -16,13 +18,19 @@ class SettingsViewBody extends StatelessWidget {
         children: [
           const Gap(30),
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              IconButton(
+                onPressed: () {
+                  GoRouter.of(context).push(AppRouter.kHomeView);
+                },
+                icon: const Icon(Icons.arrow_back),
+              ),
+              const Gap(10),
               Text(
                 'Settings',
                 style: GoogleFonts.elMessiri(
-                  textStyle: Styles.textStyle30.copyWith(
-                    fontSize: 30,
+                  textStyle: Styles.textStyle25.copyWith(
+                    fontSize: 20,
                   ),
                 ),
               ),
