@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:islamic_app/core/utils/app_assets.dart';
 import 'package:islamic_app/core/utils/app_routes.dart';
 
@@ -30,12 +31,12 @@ class MenuDrawer extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  'Quran',
-                  style: Styles.textStyle20.copyWith(
-                    color: Colors.white,
-                  ),
-                ),
+                Text('Quran',
+                    style: GoogleFonts.elMessiri(
+                      textStyle: Styles.textStyle30.copyWith(
+                        color: Colors.white,
+                      ),
+                    )),
                 Image.asset(
                   AppAssets.logo,
                   opacity: const AlwaysStoppedAnimation(0.2),

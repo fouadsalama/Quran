@@ -27,7 +27,7 @@ class SurahBody extends StatelessWidget {
               Text(
                 'ٱلۡحَمۡدُ لِلَّهِ رَبِّ ٱلۡعَٰلَمِينَ',
                 style: GoogleFonts.amiri(
-                  textStyle: Styles.textStyle20,
+                  textStyle: Styles.textStyle30,
                 ),
               ),
             ],

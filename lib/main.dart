@@ -6,6 +6,7 @@ import 'package:islamic_app/core/utils/app_routes.dart';
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
+    statusBarIconBrightness: Brightness.dark,
   ));
   runApp(const IslamicApp());
 }

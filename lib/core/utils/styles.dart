@@ -2,11 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:islamic_app/constants.dart';
 
 abstract class Styles {
-  static const textStyle20 = TextStyle(
-    fontSize: 20,
-    color: kPrimaryColor,
-    fontWeight: FontWeight.bold,
-  );
   static const textStyle24 = TextStyle(
     fontSize: 24,
     color: kTextColor,
@@ -33,6 +28,12 @@ abstract class Styles {
   );
   static const textStyle30 = TextStyle(
     fontSize: 30,
+    color: kPrimaryColor,
+    fontWeight: FontWeight.bold,
     letterSpacing: 1.5,
+  );
+  static const textStyle25 = TextStyle(
+    fontSize: 25,
+    fontWeight: FontWeight.bold,
   );
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:islamic_app/Features/home/presentation/views/widgets/custom_surah_name_and_index.dart';
 import 'package:islamic_app/core/utils/styles.dart';
 
@@ -23,19 +24,21 @@ class BookmarkViewBody extends StatelessWidget {
               GoRouter.of(context).pop();
             },
           ),
-          const Expanded(
+          Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 24),
+                  padding: const EdgeInsets.only(left: 24),
                   child: Text(
                     'Bookmarks',
-                    style: Styles.textStyle30,
+                    style: GoogleFonts.elMessiri(
+                      textStyle: Styles.textStyle30,
+                    ),
                   ),
                 ),
-                Gap(15),
-                Padding(
+                const Gap(15),
+                const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 18),
                   child: CustomSurahNameAndIndex(),
                 ),

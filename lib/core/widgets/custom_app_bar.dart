@@ -31,7 +31,7 @@ class CustomAppBarWidgets extends StatelessWidget {
             }),
             title: const Text(
               'Quran',
-              style: Styles.textStyle20,
+              style: Styles.textStyle30,
               textAlign: TextAlign.center,
             ),
             trailing: AppBarIcons(

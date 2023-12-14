@@ -28,15 +28,23 @@ class LastReadQuran extends StatelessWidget {
             ),
             borderRadius: BorderRadius.circular(23),
           ),
-          child: const Padding(
-            padding: EdgeInsets.only(
-              left: 27,
-              top: 26,
-            ),
-            child: CustomLastReadDetails(),
+          child: const Stack(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(
+                  left: 27,
+                  top: 26,
+                ),
+                child: CustomLastReadDetails(),
+              ),
+              CustomShadow()
+            ],
           ),
         ),
-        const CustomShadow(),
+        // Padding(
+        //   padding: const EdgeInsets.only(top: 86),
+        //   child: CustomShadow(),
+        // ),
         Positioned(
           left: MediaQuery.of(context).size.width * 0.5,
           top: 47,
