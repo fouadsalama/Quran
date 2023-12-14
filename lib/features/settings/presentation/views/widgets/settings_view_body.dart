@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:islamic_app/core/utils/app_routes.dart';
 import 'package:islamic_app/core/utils/styles.dart';
 
@@ -28,10 +27,8 @@ class SettingsViewBody extends StatelessWidget {
               const Gap(10),
               Text(
                 'Settings',
-                style: GoogleFonts.elMessiri(
-                  textStyle: Styles.textStyle25.copyWith(
-                    fontSize: 20,
-                  ),
+                style: Styles.textStyle25.copyWith(
+                  fontSize: 20,
                 ),
               ),
             ],

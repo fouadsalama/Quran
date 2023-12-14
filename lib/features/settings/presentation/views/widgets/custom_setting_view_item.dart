@@ -42,14 +42,17 @@ class _CustomSettingViewItemsState extends State<CustomSettingViewItems> {
             ],
           ),
           const Gap(30),
-          const Text(
+          Text(
             'Font Size',
-            style: Styles.textStyle18,
+            style: GoogleFonts.elMessiri(
+              textStyle: Styles.textStyle18,
+            ),
           ),
           Slider(
             value: kDefaultFontSize,
             min: 10,
             max: 30,
+            activeColor: const Color(0xff87D1A4),
             onChanged: (value) {
               setState(() {
                 kDefaultFontSize = value;
