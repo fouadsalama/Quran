@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islamic_app/Features/home/data/manger/surah_name_cubit/surah_name_cubit.dart';
 
+import '../../../../../core/widgets/custom_loading_indicator.dart';
 import 'custom_surah_name_and_index.dart';
 
 class CustomSurahNameListView extends StatelessWidget {
@@ -18,12 +19,14 @@ class CustomSurahNameListView extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: ListView.builder(
-              itemCount: 10,
+              itemCount: state.surah.length,
               itemBuilder: (context, index) {
-                return const Column(
+                return Column(
                   children: [
-                    CustomSurahNameAndIndex(),
-                    Divider(
+                    CustomSurahNameAndIndex(
+                      surahModel: state.surah[index],
+                    ),
+                    const Divider(
                       color: Color(0xffD9D8D8),
                     ),
                   ],
@@ -34,9 +37,7 @@ class CustomSurahNameListView extends StatelessWidget {
         );
       } else {
         return const Expanded(
-          child: Center(
-            child: CircularProgressIndicator(),
-          ),
+          child: CustomLoadingIndicator(),
         );
       }
     });

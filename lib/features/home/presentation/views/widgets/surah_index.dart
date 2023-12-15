@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:islamic_app/Features/home/data/models/surah_model/datum.dart';
 
 import '../../../../../core/utils/styles.dart';
 
 class SurahIndex extends StatelessWidget {
   const SurahIndex({
     super.key,
+    required this.surahModel,
   });
-
+  final DataModel surahModel;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,7 +21,7 @@ class SurahIndex extends StatelessWidget {
       ),
       child: Center(
         child: Text(
-          '1',
+          surahModel.number.toString(),
           style: GoogleFonts.montserrat(
             textStyle: Styles.textStyle16,
           ),

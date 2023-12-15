@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islamic_app/Features/home/data/models/surah_model/surah_model.dart';
+import 'package:islamic_app/Features/home/data/models/surah_model/datum.dart';
 import 'package:islamic_app/Features/home/data/repo/home_repo.dart';
 
 part 'surah_name_state.dart';

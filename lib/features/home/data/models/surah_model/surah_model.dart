@@ -5,7 +5,7 @@ import 'datum.dart';
 class SurahModel extends Equatable {
   final int? code;
   final String? status;
-  final List<Datum>? data;
+  final List<DataModel>? data;
 
   const SurahModel({this.code, this.status, this.data});
 
@@ -13,7 +13,7 @@ class SurahModel extends Equatable {
         code: json['code'] as int?,
         status: json['status'] as String?,
         data: (json['data'] as List<dynamic>?)
-            ?.map((e) => Datum.fromJson(e as Map<String, dynamic>))
+            ?.map((e) => DataModel.fromJson(e as Map<String, dynamic>))
             .toList(),
       );
 

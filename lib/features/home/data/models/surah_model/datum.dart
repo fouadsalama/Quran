@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-class Datum extends Equatable {
+class DataModel extends Equatable {
   final int? number;
   final String? name;
   final String? englishName;
@@ -8,7 +8,7 @@ class Datum extends Equatable {
   final int? numberOfAyahs;
   final String? revelationType;
 
-  const Datum({
+  const DataModel({
     this.number,
     this.name,
     this.englishName,
@@ -17,7 +17,7 @@ class Datum extends Equatable {
     this.revelationType,
   });
 
-  factory Datum.fromJson(Map<String, dynamic> json) => Datum(
+  factory DataModel.fromJson(Map<String, dynamic> json) => DataModel(
         number: json['number'] as int?,
         name: json['name'] as String?,
         englishName: json['englishName'] as String?,

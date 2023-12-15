@@ -12,7 +12,7 @@ final class SurahNameInitial extends SurahNameState {}
 class SurahNameLoading extends SurahNameState {}
 
 class SurahNameSuccess extends SurahNameState {
-  final List<SurahModel> surah;
+  final List<DataModel> surah;
 
   const SurahNameSuccess(this.surah);
 }
