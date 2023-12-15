@@ -11,9 +11,10 @@ class HomeRepoImpl implements HomeRepo {
   @override
   Future<Either<Failure, List<SurahModel>>> fetchSurah() async {
     try {
-      var data = await aPiService.get(endPoint: 'surah');
+      var data =
+          await aPiService.get(url: 'https://api.alquran.cloud/v1/surah');
       List<SurahModel> surahList = [];
-      for (var item in data["items"]) {
+      for (var item in data['data']) {
         try {
           surahList.add(SurahModel.fromJson(item));
         } catch (e) {
@@ -22,11 +23,7 @@ class HomeRepoImpl implements HomeRepo {
       }
       return right(surahList);
     } catch (e) {
-      throw Exception(
-        left(
-          e.toString(),
-        ),
-      );
+      return left(ServerFailure(e.toString()));
     }
   }
 }

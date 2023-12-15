@@ -1,5 +1,5 @@
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islamic_app/Features/home/data/models/surah_model/surah_model.dart';
 import 'package:islamic_app/Features/home/data/repo/home_repo.dart';
 
@@ -11,6 +11,7 @@ class SurahNameCubit extends Cubit<SurahNameState> {
   Future<void> fetchSurahName() async {
     emit(SurahNameLoading());
     var result = await homeRepo.fetchSurah();
+
     return result.fold(
       (failure) {
         emit(SurahNameFailure(failure.errMessage));

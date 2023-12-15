@@ -8,19 +8,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Stack(
-        children: [
-          // Container(
-          //   decoration: const BoxDecoration(
-          //     image: DecorationImage(
-          //       fit: BoxFit.fill,
-          //       image: AssetImage("assets/images/background.png"),
-          //     ),
-          //   ),
-          // ),
-          HomeViewBody(),
-        ],
-      ),
+      body: HomeViewBody(),
       drawer: MenuDrawer(),
     );
   }
