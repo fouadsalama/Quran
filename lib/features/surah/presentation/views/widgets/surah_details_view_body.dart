@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 import 'custom_surah_list_view.dart';
 
 import 'surah_name_section.dart';
@@ -12,7 +11,6 @@ class SurahDetailsViewBody extends StatelessWidget {
     return const Column(
       children: [
         SurahNameSection(),
-        Gap(39),
         CustomSurahListView(),
       ],
     );

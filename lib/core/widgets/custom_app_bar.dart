@@ -8,10 +8,9 @@ import 'app_bar_icons.dart';
 class CustomAppBarWidgets extends StatelessWidget {
   const CustomAppBarWidgets({
     super.key,
-    required this.data,
   });
 
-  final List<String> data;
+  // final List<String> data;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +40,7 @@ class CustomAppBarWidgets extends StatelessWidget {
               onPressed: () {
                 showSearch(
                   context: context,
-                  delegate: CustomSearchDelegate(data),
+                  delegate: CustomSearchDelegate(),
                 );
               },
             ),

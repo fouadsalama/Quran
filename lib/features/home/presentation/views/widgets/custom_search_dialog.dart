@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:islamic_app/Features/home/data/manger/surah_name_cubit/surah_name_cubit.dart';
+import 'package:islamic_app/core/widgets/custom_loading_indicator.dart';
 
 import '../../../../../core/utils/app_routes.dart';
 
 class CustomSearchDelegate extends SearchDelegate<String> {
-  final List<String> data;
-
-  CustomSearchDelegate(this.data);
-
   @override
   List<Widget> buildActions(BuildContext context) {
     return [
@@ -41,20 +40,37 @@ class CustomSearchDelegate extends SearchDelegate<String> {
   }
 
   Widget buildSearchResults(String query) {
-    final List<String> filteredResults = data
-        .where((item) => item.toLowerCase().contains(query.toLowerCase()))
-        .toList();
-
-    return ListView.builder(
-      itemCount: filteredResults.length,
-      itemBuilder: (context, index) {
-        return ListTile(
-          title: Text(filteredResults[index]),
-          onTap: () {
-            // close(context, filteredResults[index]);
-            GoRouter.of(context).push(AppRouter.kSurahDetailsView);
-          },
-        );
+    return BlocBuilder<SurahNameCubit, SurahNameState>(
+      builder: (context, state) {
+        if (state is SurahNameSuccess) {
+          final filteredSurah = query.isEmpty
+              ? state.surah
+              : state.surah
+                  .where((surah) =>
+                      surah.englishName!
+                          .toLowerCase()
+                          .contains(query.toLowerCase()) ||
+                      surah.name!.toLowerCase().contains(query.toLowerCase()))
+                  .toList();
+          return ListView.builder(
+            itemCount: filteredSurah.length,
+            itemBuilder: (context, index) {
+              final surah = filteredSurah[index];
+              return ListTile(
+                subtitle: Text(surah.englishName!),
+                title: Text(surah.name!),
+                onTap: () {
+                  GoRouter.of(context).push(
+                    AppRouter.kSurahDetailsView,
+                    extra: surah.number,
+                  );
+                },
+              );
+            },
+          );
+        } else {
+          return const CustomLoadingIndicator();
+        }
       },
     );
   }

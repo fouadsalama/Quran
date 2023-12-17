@@ -10,19 +10,13 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> data = [
-      'Al-Faatiha',
-      " Al-Baqara",
-      'سُورَةُٱلْفَاتِحَةِ'
-    ];
-    return Column(
+    return const Column(
       children: [
-        const Gap(30),
-        CustomAppBarWidgets(data: data),
-        const Gap(45),
-        const LastReadQuran(),
-        const Gap(35),
-        const CustomSurahNameListView(),
+        Gap(30),
+        CustomAppBarWidgets(),
+        Gap(45),
+        LastReadQuran(),
+        CustomSurahNameListView(),
       ],
     );
   }
