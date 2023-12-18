@@ -1,8 +1,10 @@
 import 'package:dartz/dartz.dart';
-import 'package:islamic_app/Features/surah/data/model/surah_details_model/data.dart';
 import 'package:islamic_app/core/errors/failure.dart';
 
+import '../models/surah_data/ayah.dart';
+
 abstract class SurahRepo {
-  Future<Either<Failure, List<SurahDataContent>>> fetchSurahDetails(
-      {required int number});
+  Future<Either<Failure, List<Ayah>>> fetchSurahDetails({
+    required int number,
+  });
 }

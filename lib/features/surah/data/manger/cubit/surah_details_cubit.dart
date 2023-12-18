@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:islamic_app/Features/surah/data/repo/surah_repo.dart';
 
-import '../../model/surah_details_model/data.dart';
+import '../../models/surah_data/ayah.dart';
 
 part 'surah_details_state.dart';
 
@@ -13,6 +13,7 @@ class SurahDetailsCubit extends Cubit<SurahDetailsState> {
     emit(SurahDetailsLoading());
 
     var result = await surahRepo.fetchSurahDetails(number: number);
+
     result.fold((failure) {
       emit(SurahDetailsFailure(failure.errMessage));
     }, (surah) {

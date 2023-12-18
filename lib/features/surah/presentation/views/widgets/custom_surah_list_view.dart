@@ -20,7 +20,7 @@ class CustomSurahListView extends StatelessWidget {
               itemCount: state.surah.length,
               itemBuilder: (context, index) {
                 return SurahBody(
-                  model: state.surah[0],
+                  model: state.surah[index],
                 );
               },
             );

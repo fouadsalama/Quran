@@ -3,7 +3,7 @@ import 'package:equatable/equatable.dart';
 class Ayah extends Equatable {
   final int? number;
   final String? audio;
-  final List<String>? audioSecondary;
+  final List<dynamic>? audioSecondary;
   final String? text;
   final int? numberInSurah;
   final int? juz;
@@ -30,7 +30,7 @@ class Ayah extends Equatable {
   factory Ayah.fromJson(Map<String, dynamic> json) => Ayah(
         number: json['number'] as int?,
         audio: json['audio'] as String?,
-        audioSecondary: json['audioSecondary'] as List<String>?,
+        audioSecondary: json['audioSecondary'],
         text: json['text'] as String?,
         numberInSurah: json['numberInSurah'] as int?,
         juz: json['juz'] as int?,
