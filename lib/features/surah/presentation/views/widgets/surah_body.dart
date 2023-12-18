@@ -3,10 +3,11 @@ import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../../../constants.dart';
 import '../../../../../core/utils/styles.dart';
+import '../../../data/model/surah_details_model/data.dart';
 
 class SurahBody extends StatelessWidget {
-  const SurahBody({super.key});
-
+  const SurahBody({super.key, required this.model});
+  final SurahDataContent model;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,7 +23,7 @@ class SurahBody extends StatelessWidget {
             ),
             onPressed: () {},
             child: Text(
-              'يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لَا تُحِلُّوا۟ شَعَـٰٓئِرَ ٱللَّهِ وَلَا ٱلشَّهْرَ ٱلْحَرَامَ وَلَا ٱلْهَدْىَ وَلَا ٱلْقَلَـٰٓئِدَ وَلَآ ءَآمِّينَ ٱلْبَيْتَ ٱلْحَرَامَ يَبْتَغُونَ فَضْلًۭا مِّن رَّبِّهِمْ وَرِضْوَٰنًۭا ۚ وَإِذَا حَلَلْتُمْ فَٱصْطَادُوا۟ ۚ وَلَا يَجْرِمَنَّكُمْ شَنَـَٔانُ قَوْمٍ أَن صَدُّوكُمْ عَنِ ٱلْمَسْجِدِ ٱلْحَرَامِ أَن تَعْتَدُوا۟ ۘ وَتَعَاوَنُوا۟ عَلَى ٱلْبِرِّ وَٱلتَّقْوَىٰ ۖ وَلَا تَعَاوَنُوا۟ عَلَى ٱلْإِثْمِ وَٱلْعُدْوَٰنِ ۚ وَٱتَّقُوا۟ ٱللَّهَ ۖ إِنَّ ٱللَّهَ شَدِيدُ ٱلْعِقَابِ',
+              model.numberOfAyahs.toString(),
               softWrap: true,
               style: Styles.textStyle14.copyWith(
                 color: kPrimaryColor,

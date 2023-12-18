@@ -10,15 +10,16 @@ class SurahRepoImpl implements SurahRepo {
   SurahRepoImpl(this.aPiService);
 
   @override
-  Future<Either<Failure, List<Data>>> fetchSurahDetails(
+  Future<Either<Failure, List<SurahDataContent>>> fetchSurahDetails(
       {required int number}) async {
     try {
       var data = await aPiService.get(
           url: 'https://api.alquran.cloud/v1/surah/$number/ar.alafasy');
-      List<Data> surahList = [];
-      for (var surahData in data['data']) {
+
+      List<SurahDataContent> surahList = [];
+      for (var surahData in data['data']['ayahs']) {
         try {
-          surahList.add(Data.fromJson(surahData));
+          surahList.add(SurahDataContent.fromJson(surahData));
         } catch (e) {
           throw Exception(e.toString());
         }

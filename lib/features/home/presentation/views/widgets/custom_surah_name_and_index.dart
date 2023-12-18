@@ -20,7 +20,10 @@ class CustomSurahNameAndIndex extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () {
-            GoRouter.of(context).push(AppRouter.kSurahDetailsView);
+            GoRouter.of(context).push(
+              AppRouter.kSurahDetailsView,
+              extra: surahModel,
+            );
           },
           child: Row(
             children: [

@@ -1,19 +1,18 @@
 import 'package:equatable/equatable.dart';
 
-import 'ayah.dart';
 import 'edition.dart';
 
-class Data extends Equatable {
+class SurahDataContent extends Equatable {
   final int? number;
   final String? name;
   final String? englishName;
   final String? englishNameTranslation;
   final String? revelationType;
   final int? numberOfAyahs;
-  final List<Ayah>? ayahs;
+  final List<SurahDataContent>? ayahs;
   final Edition? edition;
 
-  const Data({
+  const SurahDataContent({
     this.number,
     this.name,
     this.englishName,
@@ -24,7 +23,8 @@ class Data extends Equatable {
     this.edition,
   });
 
-  factory Data.fromJson(Map<String, dynamic> json) => Data(
+  factory SurahDataContent.fromJson(Map<String, dynamic> json) =>
+      SurahDataContent(
         number: json['number'] as int?,
         name: json['name'] as String?,
         englishName: json['englishName'] as String?,
@@ -32,7 +32,7 @@ class Data extends Equatable {
         revelationType: json['revelationType'] as String?,
         numberOfAyahs: json['numberOfAyahs'] as int?,
         ayahs: (json['ayahs'] as List<dynamic>?)
-            ?.map((e) => Ayah.fromJson(e as Map<String, dynamic>))
+            ?.map((e) => SurahDataContent.fromJson(e as Map<String, dynamic>))
             .toList(),
         edition: json['edition'] == null
             ? null

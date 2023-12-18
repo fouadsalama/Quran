@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:islamic_app/Features/home/data/models/surah_model/datum.dart';
 import '../../../../../core/utils/app_assets.dart';
 import '../../../../../core/utils/styles.dart';
 
 class CustomBoxDetails extends StatefulWidget {
   const CustomBoxDetails({
     super.key,
+    required this.model,
   });
-
+  final DataModel model;
   @override
   State<CustomBoxDetails> createState() => _CustomBoxDetailsState();
 }
@@ -26,7 +28,7 @@ class _CustomBoxDetailsState extends State<CustomBoxDetails> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'الفاتحه',
+                widget.model.name!,
                 style: Styles.textStyle24.copyWith(
                   fontSize: 32,
                 ),

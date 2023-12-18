@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islamic_app/Features/surah/data/manger/cubit/surah_details_cubit.dart';
+import 'package:islamic_app/core/widgets/custom_loading_indicator.dart';
 
 import 'surah_body.dart';
 
@@ -10,10 +13,22 @@ class CustomSurahListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: ListView.builder(
-        itemCount: 10,
-        itemBuilder: (context, index) {
-          return const SurahBody();
+      child: BlocBuilder<SurahDetailsCubit, SurahDetailsState>(
+        builder: (context, state) {
+          if (state is SurahDetailsSuccess) {
+            return ListView.builder(
+              itemCount: state.surah.length,
+              itemBuilder: (context, index) {
+                return SurahBody(
+                  model: state.surah[0],
+                );
+              },
+            );
+          } else if (state is SurahDetailsFailure) {
+            return throw Exception(state.errMessage);
+          } else {
+            return const CustomLoadingIndicator();
+          }
         },
       ),
     );

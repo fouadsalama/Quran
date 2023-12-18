@@ -5,7 +5,7 @@ import 'data.dart';
 class SurahDetailsModel extends Equatable {
   final int? code;
   final String? status;
-  final Data? data;
+  final SurahDataContent? data;
 
   const SurahDetailsModel({this.code, this.status, this.data});
 
@@ -15,7 +15,7 @@ class SurahDetailsModel extends Equatable {
       status: json['status'] as String?,
       data: json['data'] == null
           ? null
-          : Data.fromJson(json['data'] as Map<String, dynamic>),
+          : SurahDataContent.fromJson(json['data'] as Map<String, dynamic>),
     );
   }
 

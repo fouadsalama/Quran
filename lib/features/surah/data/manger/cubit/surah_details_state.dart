@@ -12,7 +12,7 @@ final class SurahDetailsInitial extends SurahDetailsState {}
 class SurahDetailsLoading extends SurahDetailsState {}
 
 class SurahDetailsSuccess extends SurahDetailsState {
-  final List<Data> surah;
+  final List<SurahDataContent> surah;
 
   const SurahDetailsSuccess(this.surah);
 }

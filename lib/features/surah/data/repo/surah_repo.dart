@@ -3,5 +3,6 @@ import 'package:islamic_app/Features/surah/data/model/surah_details_model/data.d
 import 'package:islamic_app/core/errors/failure.dart';
 
 abstract class SurahRepo {
-  Future<Either<Failure, List<Data>>> fetchSurahDetails({required int number});
+  Future<Either<Failure, List<SurahDataContent>>> fetchSurahDetails(
+      {required int number});
 }
