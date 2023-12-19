@@ -24,8 +24,6 @@ class CustomSurahListView extends StatelessWidget {
                 );
               },
             );
-          } else if (state is SurahDetailsFailure) {
-            return throw Exception(state.errMessage);
           } else {
             return const CustomLoadingIndicator();
           }
