@@ -42,7 +42,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
             builder: (context, _) {
               return SlideTransition(
                 position: offsetAnimation,
-                child: Image.asset(AppAssets.logo),
+                child: Image.asset(
+                  AppAssets.logo,
+                ),
               );
             }),
       ],
@@ -63,7 +65,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   void navigateToHome() {
     Future.delayed(const Duration(seconds: 2)).then(
-      (value) => GoRouter.of(context).pushReplacement(AppRouter.kHomeView),
+      (value) => GoRouter.of(context).pushReplacement(
+        AppRouter.kHomeView,
+      ),
     );
   }
 }

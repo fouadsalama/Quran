@@ -33,30 +33,42 @@ class _CustomBoxDetailsState extends State<CustomBoxDetails> {
                   fontSize: 32,
                 ),
               ),
-              PopupMenuButton(
-                  position: PopupMenuPosition.under,
-                  icon: Icon(
-                    isSelected == false ? Icons.expand_more : Icons.expand_less,
-                    color: Colors.white,
-                  ),
-                  onOpened: () {
+              IconButton(
+                  onPressed: () {
                     setState(() {
                       isSelected = true;
                     });
+                    Scaffold.of(context).openDrawer();
                   },
-                  onCanceled: () {
-                    setState(() {
-                      isSelected = false;
-                    });
-                  },
-                  itemBuilder: (context) => [
-                        const PopupMenuItem(
-                          child: Text('Al-Faatiha'),
-                        ),
-                        const PopupMenuItem(
-                          child: Text('data'),
-                        ),
-                      ])
+                  icon: Icon(
+                    isSelected == false ? Icons.expand_more : Icons.expand_less,
+                    color: Colors.white,
+                  )),
+              // PopupMenuButton(
+              //   position: PopupMenuPosition.under,
+              //   icon: Icon(
+              //     isSelected == false ? Icons.expand_more : Icons.expand_less,
+              //     color: Colors.white,
+              //   ),
+              //   onOpened: () {
+              //     setState(() {
+              //       isSelected = true;
+              //     });
+              //   },
+              //   onCanceled: () {
+              //     setState(() {
+              //       isSelected = false;
+              //     });
+              //   },
+              //   itemBuilder: (context) => [
+              //     const PopupMenuItem(
+              //       child: Text('Al-Faatiha'),
+              //     ),
+              //     const PopupMenuItem(
+              //       child: Text('data'),
+              //     ),
+              //   ],
+              // ),
             ],
           ),
         ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamic_app/Features/home/data/models/surah_model/datum.dart';
+import 'widgets/custom_show_drawer.dart';
 import 'widgets/surah_details_view_body.dart';
 
 class SurahDetailsView extends StatelessWidget {
@@ -15,6 +16,7 @@ class SurahDetailsView extends StatelessWidget {
       body: SurahDetailsViewBody(
         dataModel: dataModel,
       ),
+      drawer: const CustomShowDrawer(),
     );
   }
 }
