@@ -4,19 +4,13 @@ import 'package:islamic_app/Features/home/data/models/surah_model/datum.dart';
 import '../../../../../core/utils/app_assets.dart';
 import '../../../../../core/utils/styles.dart';
 
-class CustomBoxDetails extends StatefulWidget {
+class CustomBoxDetails extends StatelessWidget {
   const CustomBoxDetails({
     super.key,
     required this.model,
   });
   final DataModel model;
-  @override
-  State<CustomBoxDetails> createState() => _CustomBoxDetailsState();
-}
 
-bool isSelected = false;
-
-class _CustomBoxDetailsState extends State<CustomBoxDetails> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -28,47 +22,20 @@ class _CustomBoxDetailsState extends State<CustomBoxDetails> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                widget.model.name!,
+                model.name!,
                 style: Styles.textStyle24.copyWith(
                   fontSize: 32,
                 ),
               ),
               IconButton(
-                  onPressed: () {
-                    setState(() {
-                      isSelected = true;
-                    });
-                    Scaffold.of(context).openDrawer();
-                  },
-                  icon: Icon(
-                    isSelected == false ? Icons.expand_more : Icons.expand_less,
-                    color: Colors.white,
-                  )),
-              // PopupMenuButton(
-              //   position: PopupMenuPosition.under,
-              //   icon: Icon(
-              //     isSelected == false ? Icons.expand_more : Icons.expand_less,
-              //     color: Colors.white,
-              //   ),
-              //   onOpened: () {
-              //     setState(() {
-              //       isSelected = true;
-              //     });
-              //   },
-              //   onCanceled: () {
-              //     setState(() {
-              //       isSelected = false;
-              //     });
-              //   },
-              //   itemBuilder: (context) => [
-              //     const PopupMenuItem(
-              //       child: Text('Al-Faatiha'),
-              //     ),
-              //     const PopupMenuItem(
-              //       child: Text('data'),
-              //     ),
-              //   ],
-              // ),
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+                icon: const Icon(
+                  Icons.expand_more,
+                  color: Colors.white,
+                ),
+              ),
             ],
           ),
         ),

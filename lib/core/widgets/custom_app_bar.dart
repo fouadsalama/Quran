@@ -10,8 +10,6 @@ class CustomAppBarWidgets extends StatelessWidget {
     super.key,
   });
 
-  // final List<String> data;
-
   @override
   Widget build(BuildContext context) {
     return Row(

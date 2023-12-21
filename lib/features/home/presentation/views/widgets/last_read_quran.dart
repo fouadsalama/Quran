@@ -14,8 +14,8 @@ class LastReadQuran extends StatelessWidget {
       children: [
         Container(
           margin: const EdgeInsets.symmetric(horizontal: 24),
-          height: MediaQuery.of(context).size.height * 0.22,
           width: double.infinity,
+          height: 170,
           decoration: BoxDecoration(
             gradient: const LinearGradient(
               colors: [

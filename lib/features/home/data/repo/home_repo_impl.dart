@@ -13,6 +13,7 @@ class HomeRepoImpl implements HomeRepo {
     try {
       var data =
           await aPiService.get(url: 'https://api.alquran.cloud/v1/surah');
+
       List<DataModel> surahList = [];
       for (var surahData in data['data']) {
         try {
