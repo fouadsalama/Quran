@@ -8,8 +8,10 @@ class CustomFailureWidget extends StatelessWidget {
   final String errMessage;
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(errMessage),
+    return Expanded(
+      child: Center(
+        child: Text(errMessage),
+      ),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 import 'package:islamic_app/Features/home/data/models/surah_model/datum.dart';
 import 'package:islamic_app/Features/home/data/repo/home_repo.dart';
 import 'package:islamic_app/core/errors/failure.dart';
@@ -24,7 +25,11 @@ class HomeRepoImpl implements HomeRepo {
       }
       return right(surahList);
     } catch (e) {
-      return left(ServerFailure(e.toString()));
+      if (e is DioException) {
+        return left(ServerFailure.fromDioException(e));
+      } else {
+        return left(ServerFailure(e.toString()));
+      }
     }
   }
 }

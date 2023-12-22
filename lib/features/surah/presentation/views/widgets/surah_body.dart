@@ -1,16 +1,18 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:islamic_app/Features/home/data/models/surah_model/datum.dart';
 import 'package:islamic_app/core/utils/app_assets.dart';
 import '../../../../../constants.dart';
 import '../../../../../core/utils/styles.dart';
 import '../../../data/models/surah_data/ayah.dart';
+import 'icons_surah_body.dart';
 
 class SurahBody extends StatefulWidget {
-  const SurahBody({super.key, required this.model, required this.dataModel});
+  const SurahBody({
+    super.key,
+    required this.model,
+  });
   final Ayah model;
-  final DataModel dataModel;
   @override
   State<SurahBody> createState() => _SurahBodyState();
 }
@@ -49,27 +51,27 @@ class _SurahBodyState extends State<SurahBody> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        IconButton(
-                          onPressed: () {
-                            final url = widget.model.audio;
-                            playAudioFromUrl(url!);
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            CustomSurahBodyIcon(
+                              image: AppAssets.shareIcon,
+                              onPressed: () {},
+                            ),
+                            CustomSurahBodyIcon(
+                              image: isClick
+                                  ? AppAssets.pauseButton
+                                  : AppAssets.playButton,
+                              onPressed: () {
+                                final url = widget.model.audio;
+                                playAudioFromUrl(url!);
 
-                            setState(() {
-                              isClick = !isClick;
-                            });
-                          },
-                          icon: SizedBox(
-                            height: 15,
-                            child: isClick
-                                ? Image.asset(
-                                    AppAssets.pauseButton,
-                                    color: kPrimaryColor,
-                                  )
-                                : Image.asset(
-                                    AppAssets.playButton,
-                                    color: kPrimaryColor,
-                                  ),
-                          ),
+                                setState(() {
+                                  isClick = !isClick;
+                                });
+                              },
+                            ),
+                          ],
                         ),
                         Expanded(
                           child: Column(

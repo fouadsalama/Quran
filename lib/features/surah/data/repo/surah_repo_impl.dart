@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 import 'package:islamic_app/Features/surah/data/repo/surah_repo.dart';
 import 'package:islamic_app/core/errors/failure.dart';
 import 'package:islamic_app/core/utils/api_service.dart';
@@ -47,11 +48,13 @@ class SurahRepoImpl implements SurahRepo {
       }
       return right(surahList);
     } catch (e) {
-      return left(
-        ServerFailure(
-          e.toString(),
-        ),
-      );
+      if (e is DioException) {
+        return left(
+          ServerFailure.fromDioException(e),
+        );
+      } else {
+        return left(ServerFailure(e.toString()));
+      }
     }
   }
 }
