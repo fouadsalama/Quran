@@ -15,7 +15,7 @@ class CustomSurahBodyIcon extends StatelessWidget {
     return IconButton(
       onPressed: onPressed,
       icon: SizedBox(
-        height: 15,
+        height: 20,
         child: Image.asset(
           image,
           color: kPrimaryColor,

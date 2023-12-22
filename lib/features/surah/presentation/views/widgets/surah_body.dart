@@ -2,6 +2,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:islamic_app/core/utils/app_assets.dart';
+import 'package:share_plus/share_plus.dart';
 import '../../../../../constants.dart';
 import '../../../../../core/utils/styles.dart';
 import '../../../data/models/surah_data/ayah.dart';
@@ -56,7 +57,9 @@ class _SurahBodyState extends State<SurahBody> {
                           children: [
                             CustomSurahBodyIcon(
                               image: AppAssets.shareIcon,
-                              onPressed: () {},
+                              onPressed: () {
+                                Share.share(widget.model.text!);
+                              },
                             ),
                             CustomSurahBodyIcon(
                               image: isClick
