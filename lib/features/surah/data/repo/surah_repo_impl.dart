@@ -30,4 +30,28 @@ class SurahRepoImpl implements SurahRepo {
       return left(ServerFailure(e.toString()));
     }
   }
+
+  @override
+  Future<Either<Failure, List<Ayah>>> fetchSurahEnText(
+      {required int number}) async {
+    try {
+      var data = await aPiService.get(
+          url: 'https://api.alquran.cloud/v1/surah/$number/en.asad');
+      List<Ayah> surahList = [];
+      for (var surahData in data['data']['ayahs']) {
+        try {
+          surahList.add(Ayah.fromJson(surahData));
+        } catch (e) {
+          throw Exception(e.toString());
+        }
+      }
+      return right(surahList);
+    } catch (e) {
+      return left(
+        ServerFailure(
+          e.toString(),
+        ),
+      );
+    }
+  }
 }

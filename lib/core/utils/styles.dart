@@ -35,10 +35,9 @@ abstract class Styles {
     fontWeight: FontWeight.bold,
   );
   static const textStyle30 = TextStyle(
-    fontSize: 30,
+    fontSize: 25,
     color: kPrimaryColor,
     fontWeight: FontWeight.bold,
-    fontFamily: kAmiri,
     letterSpacing: 1.5,
   );
 }

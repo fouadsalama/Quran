@@ -4,11 +4,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islamic_app/Features/home/data/manger/surah_name_cubit/surah_name_cubit.dart';
 import 'package:islamic_app/Features/home/data/repo/home_repo_impl.dart';
-import 'package:islamic_app/Features/surah/data/manger/cubit/surah_details_cubit.dart';
 import 'package:islamic_app/Features/surah/data/repo/surah_repo_impl.dart';
 import 'package:islamic_app/core/utils/app_routes.dart';
 import 'package:islamic_app/core/utils/service_locator.dart';
 import 'package:islamic_app/simple_bloc_observer.dart';
+
+import 'Features/surah/data/manger/surah_details_cubit/surah_details_cubit.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(

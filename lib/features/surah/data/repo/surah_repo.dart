@@ -7,4 +7,7 @@ abstract class SurahRepo {
   Future<Either<Failure, List<Ayah>>> fetchSurahDetails({
     required int number,
   });
+  Future<Either<Failure, List<Ayah>>> fetchSurahEnText({
+    required int number,
+  });
 }

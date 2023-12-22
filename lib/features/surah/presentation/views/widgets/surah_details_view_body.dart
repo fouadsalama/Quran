@@ -17,7 +17,9 @@ class SurahDetailsViewBody extends StatelessWidget {
         SurahNameSection(
           dataModel: dataModel,
         ),
-        const CustomSurahListView(),
+        CustomSurahListView(
+          dataModel: dataModel,
+        ),
       ],
     );
   }

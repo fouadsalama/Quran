@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/app_routes.dart';
 import '../../../../home/data/models/surah_model/datum.dart';
-import '../../../data/manger/cubit/surah_details_cubit.dart';
+import '../../../data/manger/surah_details_cubit/surah_details_cubit.dart';
 
 class CustomDisplaySurahListView extends StatelessWidget {
   const CustomDisplaySurahListView({

@@ -16,7 +16,7 @@ class SurahNameSection extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          height: MediaQuery.of(context).size.height * 0.2,
+          height: 146,
           width: double.infinity,
           decoration: const BoxDecoration(
             gradient: LinearGradient(
@@ -26,10 +26,6 @@ class SurahNameSection extends StatelessWidget {
               ],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-            ),
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(20),
-              topRight: Radius.circular(20),
             ),
             image: DecorationImage(
               opacity: 0.1,

@@ -4,10 +4,10 @@ import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islamic_app/Features/home/data/models/surah_model/datum.dart';
-import 'package:islamic_app/Features/surah/data/manger/cubit/surah_details_cubit.dart';
 import 'package:islamic_app/core/utils/app_routes.dart';
 import 'package:islamic_app/core/utils/styles.dart';
 
+import '../../../../surah/data/manger/surah_details_cubit/surah_details_cubit.dart';
 import 'surah_index.dart';
 
 class CustomSurahNameAndIndex extends StatelessWidget {
