@@ -40,7 +40,9 @@ class SurahNameSection extends StatelessWidget {
             model: dataModel,
           ),
         ),
-        const CustomSurahDetailsIcons(),
+        CustomSurahDetailsIcons(
+          dataModel: dataModel,
+        ),
         const CustomShadow(),
       ],
     );

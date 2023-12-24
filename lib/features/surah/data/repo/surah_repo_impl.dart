@@ -28,7 +28,11 @@ class SurahRepoImpl implements SurahRepo {
       }
       return right(surahList);
     } catch (e) {
-      return left(ServerFailure(e.toString()));
+      if (e is DioException) {
+        return left(ServerFailure.fromDioException(e));
+      } else {
+        return left(ServerFailure(e.toString()));
+      }
     }
   }
 

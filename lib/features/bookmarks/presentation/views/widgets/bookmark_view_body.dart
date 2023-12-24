@@ -5,9 +5,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:islamic_app/core/utils/styles.dart';
 
 import '../../../../../core/widgets/app_bar_icons.dart';
+import 'custom_bookmark_ist_view.dart';
 
 class BookmarkViewBody extends StatelessWidget {
-  const BookmarkViewBody({super.key});
+  const BookmarkViewBody({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -37,10 +40,7 @@ class BookmarkViewBody extends StatelessWidget {
                   ),
                 ),
                 const Gap(15),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 18),
-                  // child: CustomSurahNameAndIndex(),
-                ),
+                const CustomBookmarkListView(),
               ],
             ),
           ),
