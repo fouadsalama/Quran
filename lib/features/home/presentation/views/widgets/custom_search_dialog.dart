@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:islamic_app/Features/home/data/manger/surah_name_cubit/surah_name_cubit.dart';
+import 'package:islamic_app/Features/surah/data/manger/surah_details_ar_cubit/surah_details_cubit.dart';
 import 'package:islamic_app/core/widgets/custom_loading_indicator.dart';
 
 import '../../../../../core/utils/app_routes.dart';
-import '../../../../surah/data/manger/surah_details_cubit/surah_details_cubit.dart';
 
 class CustomSearchDelegate extends SearchDelegate<String> {
   @override
@@ -65,7 +65,7 @@ class CustomSearchDelegate extends SearchDelegate<String> {
                     AppRouter.kSurahDetailsView,
                     extra: state.surah[index],
                   );
-                  BlocProvider.of<SurahDetailsCubit>(context).fetchSurahText(
+                  BlocProvider.of<SurahDetailsArCubit>(context).fetchSurahText(
                     number: state.surah[index].number!,
                   );
                 },

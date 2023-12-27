@@ -6,8 +6,8 @@ import '../../models/surah_data/ayah.dart';
 
 part 'surah_details_state.dart';
 
-class SurahDetailsCubit extends Cubit<SurahDetailsState> {
-  SurahDetailsCubit(this.surahRepo) : super(SurahDetailsInitial());
+class SurahDetailsArCubit extends Cubit<SurahDetailsState> {
+  SurahDetailsArCubit(this.surahRepo) : super(SurahDetailsInitial());
   final SurahRepo surahRepo;
   Future<void> fetchSurahText({required int number}) async {
     emit(SurahDetailsLoading());

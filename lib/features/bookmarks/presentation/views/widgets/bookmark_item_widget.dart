@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import '../../../../home/data/models/surah_model/datum.dart';
 import '../../../../home/presentation/views/widgets/custom_surah_name_and_index.dart';
 
-class BookmarkItemWidget extends StatelessWidget {
-  const BookmarkItemWidget({
+class BookmarkListViewItem extends StatelessWidget {
+  const BookmarkListViewItem({
     super.key,
     required this.surahList,
   });
 
-  final List<DataModel> surahList;
+  final Set<DataModel> surahList;
 
   @override
   Widget build(BuildContext context) {

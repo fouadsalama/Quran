@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:islamic_app/Features/home/data/manger/surah_name_cubit/surah_name_cubit.dart';
 import 'package:islamic_app/core/utils/app_routes.dart';
 import '../../../../../core/utils/app_assets.dart';
 
@@ -64,10 +66,10 @@ class _SplashViewBodyState extends State<SplashViewBody>
   }
 
   void navigateToHome() {
-    Future.delayed(const Duration(seconds: 2)).then(
-      (value) => GoRouter.of(context).pushReplacement(
-        AppRouter.kHomeView,
-      ),
-    );
+    BlocProvider.of<SurahNameCubit>(context).fetchSurahName().then(
+          (value) => GoRouter.of(context).pushReplacement(
+            AppRouter.kHomeView,
+          ),
+        );
   }
 }

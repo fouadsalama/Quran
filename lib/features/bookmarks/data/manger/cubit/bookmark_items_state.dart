@@ -10,13 +10,13 @@ sealed class BookmarkItemsState extends Equatable {
 final class BookmarkItemsInitial extends BookmarkItemsState {}
 
 class BookmarkRemoveItems extends BookmarkItemsState {
-  final List<DataModel> surahItem;
+  final Set<DataModel> surahItem;
 
   const BookmarkRemoveItems(this.surahItem);
 }
 
 class BookmarkAddItemsSuccess extends BookmarkItemsState {
-  final List<DataModel> surah;
+  final Set<DataModel> surah;
 
   const BookmarkAddItemsSuccess(this.surah);
 }

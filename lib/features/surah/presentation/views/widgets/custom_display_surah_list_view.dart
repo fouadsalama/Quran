@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../../../../core/utils/app_routes.dart';
 import '../../../../home/data/models/surah_model/datum.dart';
-import '../../../data/manger/surah_details_cubit/surah_details_cubit.dart';
 
 class CustomDisplaySurahListView extends StatelessWidget {
   const CustomDisplaySurahListView({
@@ -21,9 +18,6 @@ class CustomDisplaySurahListView extends StatelessWidget {
         GoRouter.of(context).pushReplacement(
           AppRouter.kSurahDetailsView,
           extra: dataModel,
-        );
-        BlocProvider.of<SurahDetailsCubit>(context).fetchSurahText(
-          number: dataModel.number!,
         );
       },
     );

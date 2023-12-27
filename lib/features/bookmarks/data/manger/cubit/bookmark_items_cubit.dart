@@ -6,16 +6,19 @@ part 'bookmark_items_state.dart';
 
 class BookmarkItemsCubit extends Cubit<BookmarkItemsState> {
   BookmarkItemsCubit() : super(BookmarkItemsInitial());
-  List<DataModel> surahList = [];
-  void addBookmark(DataModel dataModel) {
-    if (surahList.contains(dataModel)) {
-      surahList.remove(dataModel);
-      print(surahList);
-      emit(BookmarkRemoveItems(surahList));
+
+  final Set<DataModel> _model = {};
+
+  Set<DataModel> get dataModel => _model;
+
+  void addBookmark(DataModel surahModel) {
+    if (_model.contains(surahModel)) {
+      _model.remove(surahModel);
+      emit(BookmarkRemoveItems(_model));
     } else {
-      surahList.add(dataModel);
-      print(surahList);
+      _model.add(surahModel);
+      emit(BookmarkItemsInitial());
     }
-    emit(BookmarkAddItemsSuccess(surahList));
+    emit(BookmarkAddItemsSuccess(_model));
   }
 }

@@ -13,11 +13,12 @@ class CustomBookmarkListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<BookmarkItemsCubit, BookmarkItemsState>(
       builder: (context, state) {
-        final surahList = context.read<BookmarkItemsCubit>().surahList;
-        if (state is BookmarkAddItemsSuccess && surahList.isNotEmpty) {
-          return BookmarkItemWidget(surahList: surahList);
+        final surahList = context.read<BookmarkItemsCubit>().dataModel;
+        if (state is BookmarkAddItemsSuccess) {
+          return BookmarkListViewItem(surahList: surahList);
+          // return BookmarkItemWidget(surahList: surahList);
         } else if (state is BookmarkRemoveItems) {
-          return BookmarkItemWidget(surahList: surahList);
+          return BookmarkListViewItem(surahList: surahList);
         } else {
           return Container();
         }

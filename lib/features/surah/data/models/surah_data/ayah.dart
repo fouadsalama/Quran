@@ -11,7 +11,6 @@ class Ayah extends Equatable {
   final int? page;
   final int? ruku;
   final int? hizbQuarter;
-  final bool? sajda;
 
   const Ayah({
     this.number,
@@ -24,7 +23,6 @@ class Ayah extends Equatable {
     this.page,
     this.ruku,
     this.hizbQuarter,
-    this.sajda,
   });
 
   factory Ayah.fromJson(Map<String, dynamic> json) => Ayah(
@@ -38,7 +36,6 @@ class Ayah extends Equatable {
         page: json['page'] as int?,
         ruku: json['ruku'] as int?,
         hizbQuarter: json['hizbQuarter'] as int?,
-        sajda: json['sajda'] as bool?,
       );
 
   Map<String, dynamic> toJson() => {
@@ -52,7 +49,6 @@ class Ayah extends Equatable {
         'page': page,
         'ruku': ruku,
         'hizbQuarter': hizbQuarter,
-        'sajda': sajda,
       };
 
   @override
@@ -68,7 +64,6 @@ class Ayah extends Equatable {
       page,
       ruku,
       hizbQuarter,
-      sajda,
     ];
   }
 }

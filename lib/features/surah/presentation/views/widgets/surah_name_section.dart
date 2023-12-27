@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamic_app/Features/home/data/models/surah_model/datum.dart';
 import '../../../../../core/utils/app_assets.dart';
-import 'custom_surah_details_icons.dart';
 import 'custom_box_details.dart';
 import 'custom_shadow.dart';
 
@@ -11,6 +10,7 @@ class SurahNameSection extends StatelessWidget {
     required this.dataModel,
   });
   final DataModel dataModel;
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -39,9 +39,6 @@ class SurahNameSection extends StatelessWidget {
           child: CustomBoxDetails(
             model: dataModel,
           ),
-        ),
-        CustomSurahDetailsIcons(
-          dataModel: dataModel,
         ),
         const CustomShadow(),
       ],
