@@ -12,7 +12,7 @@ class SurahRepoImpl implements SurahRepo {
   SurahRepoImpl(this.aPiService);
 
   @override
-  Future<Either<Failure, List<Ayah>>> fetchSurahDetails(
+  Future<Either<Failure, List<Ayah>>> fetchSurahArText(
       {required int number}) async {
     try {
       var data = await aPiService.get(

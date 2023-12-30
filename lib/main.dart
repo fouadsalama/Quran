@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:islamic_app/Features/home/data/manger/last_read_cubit/last_read_cubit.dart';
 import 'package:islamic_app/Features/home/data/manger/surah_name_cubit/surah_name_cubit.dart';
 import 'package:islamic_app/Features/home/data/repo/home_repo_impl.dart';
-import 'package:islamic_app/Features/surah/data/repo/surah_repo_impl.dart';
 import 'package:islamic_app/core/utils/app_routes.dart';
 import 'package:islamic_app/core/utils/service_locator.dart';
 import 'package:islamic_app/simple_bloc_observer.dart';
 
 import 'Features/bookmarks/data/manger/cubit/bookmark_items_cubit.dart';
 import 'Features/surah/data/manger/surah_details_ar_cubit/surah_details_cubit.dart';
+import 'Features/surah/data/repo/surah_repo_impl.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -35,9 +36,13 @@ class IslamicApp extends StatelessWidget {
           ),
         ),
         BlocProvider(
-            create: (context) => SurahDetailsArCubit(
-                  getIt.get<SurahRepoImpl>(),
-                )),
+          create: (context) => SurahDetailsArCubit(
+            getIt.get<SurahRepoImpl>(),
+          ),
+        ),
+        BlocProvider(
+          create: (context) => LastReadCubit(),
+        ),
         BlocProvider(
           create: (context) => BookmarkItemsCubit(),
         ),

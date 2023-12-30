@@ -16,27 +16,24 @@ class CustomSurahNameListView extends StatelessWidget {
     return BlocBuilder<SurahNameCubit, SurahNameState>(
         builder: (context, state) {
       if (state is SurahNameSuccess) {
-        return Expanded(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24),
-            child: ListView.builder(
-              physics: const BouncingScrollPhysics(
-                parent: BouncingScrollPhysics(),
-              ),
-              itemCount: state.surah.length,
-              itemBuilder: (context, index) {
-                return Column(
-                  children: [
-                    CustomSurahNameAndIndex(
-                      surahModel: state.surah[index],
-                    ),
-                    const Divider(
-                      color: Color(0xffD9D8D8),
-                    ),
-                  ],
-                );
-              },
-            ),
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: ListView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: state.surah.length,
+            itemBuilder: (context, index) {
+              return Column(
+                children: [
+                  CustomSurahNameAndIndex(
+                    surahModel: state.surah[index],
+                  ),
+                  const Divider(
+                    color: Color(0xffD9D8D8),
+                  ),
+                ],
+              );
+            },
           ),
         );
       } else if (state is SurahNameFailure) {

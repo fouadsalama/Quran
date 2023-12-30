@@ -6,7 +6,9 @@ import 'custom_surah_name_list_view.dart';
 import 'last_read_quran.dart';
 
 class HomeViewBody extends StatelessWidget {
-  const HomeViewBody({super.key});
+  const HomeViewBody({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +16,20 @@ class HomeViewBody extends StatelessWidget {
       children: [
         Gap(30),
         CustomAppBarWidgets(),
-        Gap(45),
-        LastReadQuran(),
-        CustomSurahNameListView(),
+        Gap(20),
+        Expanded(
+          child: CustomScrollView(
+            physics: BouncingScrollPhysics(),
+            slivers: [
+              SliverToBoxAdapter(
+                child: LastReadQuran(),
+              ),
+              SliverToBoxAdapter(
+                child: CustomSurahNameListView(),
+              )
+            ],
+          ),
+        ),
       ],
     );
   }

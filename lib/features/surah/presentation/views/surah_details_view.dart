@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islamic_app/Features/home/data/manger/last_read_cubit/last_read_cubit.dart';
 import 'package:islamic_app/Features/home/data/models/surah_model/datum.dart';
 import '../../data/manger/surah_details_ar_cubit/surah_details_cubit.dart';
 import 'widgets/custom_show_drawer.dart';
@@ -21,6 +22,8 @@ class _SurahDetailsViewState extends State<SurahDetailsView> {
   void initState() {
     BlocProvider.of<SurahDetailsArCubit>(context)
         .fetchSurahText(number: widget.dataModel.number!);
+    BlocProvider.of<LastReadCubit>(context).lastRead(widget.dataModel);
+
     super.initState();
   }
 

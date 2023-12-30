@@ -1,42 +1,42 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:islamic_app/core/utils/styles.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:islamic_app/Features/home/data/manger/last_read_cubit/last_read_cubit.dart';
+import 'package:islamic_app/Features/home/data/models/surah_model/datum.dart';
+import 'package:islamic_app/core/utils/app_routes.dart';
+
+import 'continue_button.dart';
 
 class CustomReadButton extends StatelessWidget {
   const CustomReadButton({
     super.key,
+    required this.dataModel,
   });
-
+  final DataModel dataModel;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 115,
-      height: 31,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Row(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 11),
-            child: Text(
-              'Continue ',
-              style: GoogleFonts.montserrat(
-                textStyle: Styles.textStyle12.copyWith(
-                  color: Colors.black,
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(width: 11),
-          const Icon(
-            Icons.arrow_forward,
-            size: 20,
-            color: Color(0xff004B40),
-          ),
-        ],
-      ),
+    return BlocBuilder<LastReadCubit, LastReadState>(
+      builder: (context, state) {
+        if (state is LastReadSuccess) {
+          return ContinueButton(
+            onTap: () {
+              GoRouter.of(context).push(
+                AppRouter.kSurahDetailsView,
+                extra: state.dataModel,
+              );
+            },
+          );
+        } else {
+          return ContinueButton(
+            onTap: () {
+              GoRouter.of(context).push(
+                AppRouter.kSurahDetailsView,
+                extra: dataModel,
+              );
+            },
+          );
+        }
+      },
     );
   }
 }

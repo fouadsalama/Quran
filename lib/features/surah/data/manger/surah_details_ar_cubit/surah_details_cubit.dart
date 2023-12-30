@@ -12,7 +12,7 @@ class SurahDetailsArCubit extends Cubit<SurahDetailsState> {
   Future<void> fetchSurahText({required int number}) async {
     emit(SurahDetailsLoading());
 
-    var result = await surahRepo.fetchSurahDetails(number: number);
+    var result = await surahRepo.fetchSurahArText(number: number);
 
     result.fold((failure) {
       emit(SurahDetailsFailure(failure.errMessage));
