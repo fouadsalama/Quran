@@ -15,4 +15,4 @@ class LastReadSuccess extends LastReadState {
   const LastReadSuccess(this.dataModel);
 }
 
-class LastRead extends LastReadState {}
+class LastReadFirst extends LastReadState {}

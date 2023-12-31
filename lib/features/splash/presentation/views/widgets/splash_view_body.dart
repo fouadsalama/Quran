@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:islamic_app/Features/home/data/manger/surah_name_cubit/surah_name_cubit.dart';
 import 'package:islamic_app/core/utils/app_routes.dart';
 import '../../../../../core/utils/app_assets.dart';
+import '../../../../../core/utils/functions/shared_preferences_methods.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({
@@ -22,6 +23,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   void initState() {
     initialSlideAnimation();
+    loadLastReadSurah();
 
     navigateToHome();
 

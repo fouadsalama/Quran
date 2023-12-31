@@ -16,36 +16,36 @@ class CustomLastReadDetails extends StatelessWidget {
   final DataModel model;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'Last Read',
-          style: GoogleFonts.inter(
-            textStyle: Styles.textStyle12,
-          ),
-        ),
-        const Gap(11),
-        BlocBuilder<LastReadCubit, LastReadState>(
-          builder: (context, state) {
-            return Text(
+    return BlocBuilder<LastReadCubit, LastReadState>(
+      builder: (context, state) {
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Last Read',
+              style: GoogleFonts.inter(
+                textStyle: Styles.textStyle12,
+              ),
+            ),
+            const Gap(11),
+            Text(
               state is LastReadSuccess ? state.dataModel.name! : model.name!,
               style: Styles.textStyle24,
-            );
-          },
-        ),
-        const Gap(3),
-        Text(
-          'Ayah no. 1',
-          style: GoogleFonts.inter(
-            textStyle: Styles.textStyle12,
-          ),
-        ),
-        const Gap(14),
-        CustomReadButton(
-          dataModel: model,
-        ),
-      ],
+            ),
+            const Gap(3),
+            Text(
+              'Ayahs no. ${state is LastReadSuccess ? state.dataModel.numberOfAyahs : model.numberOfAyahs}',
+              style: GoogleFonts.inter(
+                textStyle: Styles.textStyle12,
+              ),
+            ),
+            const Gap(14),
+            CustomReadButton(
+              dataModel: model,
+            ),
+          ],
+        );
+      },
     );
   }
 }

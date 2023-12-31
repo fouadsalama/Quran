@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islamic_app/Features/home/data/manger/surah_name_cubit/surah_name_cubit.dart';
 import 'package:islamic_app/Features/surah/presentation/views/widgets/custom_shadow.dart';
 import 'package:islamic_app/core/utils/app_assets.dart';
-import '../../../data/models/surah_model/datum.dart';
+import 'package:islamic_app/core/utils/functions/shared_preferences_methods.dart';
 import 'custom_last_read_details.dart';
 
 class LastReadQuran extends StatelessWidget {
@@ -38,14 +36,8 @@ class LastReadQuran extends StatelessWidget {
                   left: 27,
                   top: 26,
                 ),
-                child: BlocBuilder<SurahNameCubit, SurahNameState>(
-                  builder: (context, state) {
-                    return CustomLastReadDetails(
-                      model: state is SurahNameSuccess
-                          ? state.surah[0]
-                          : const DataModel(),
-                    );
-                  },
+                child: CustomLastReadDetails(
+                  model: lastReadSurahModel,
                 ),
               ),
               const CustomShadow()
