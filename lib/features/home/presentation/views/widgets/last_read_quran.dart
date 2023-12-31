@@ -37,7 +37,7 @@ class LastReadQuran extends StatelessWidget {
                   top: 26,
                 ),
                 child: CustomLastReadDetails(
-                  model: lastReadSurahModel,
+                  model: LocalLastRead.lastReadSurahModel,
                 ),
               ),
               const CustomShadow()
