@@ -9,7 +9,7 @@ import 'package:islamic_app/core/utils/app_routes.dart';
 import 'package:islamic_app/core/utils/service_locator.dart';
 import 'package:islamic_app/simple_bloc_observer.dart';
 
-import 'Features/bookmarks/data/manger/cubit/bookmark_items_cubit.dart';
+import 'Features/bookmarks/data/manger/bookmark_item_cubit/bookmark_items_cubit.dart';
 import 'Features/surah/data/manger/surah_details_ar_cubit/surah_details_cubit.dart';
 import 'Features/surah/data/repo/surah_repo_impl.dart';
 

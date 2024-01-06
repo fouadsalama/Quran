@@ -23,6 +23,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   void initState() {
     initialSlideAnimation();
+
     LocalLastRead.loadLastReadSurah();
 
     navigateToHome();

@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:islamic_app/Features/home/data/models/surah_model/datum.dart';
 import '../../../../../constants.dart';
 
-import '../../../../bookmarks/data/manger/cubit/bookmark_items_cubit.dart';
+import '../../../../bookmarks/data/manger/bookmark_item_cubit/bookmark_items_cubit.dart';
 import 'display_name_of_surah.dart';
 
 class CustomBoxDetails extends StatelessWidget {
@@ -33,7 +33,7 @@ class CustomBoxDetails extends StatelessWidget {
         BlocBuilder<BookmarkItemsCubit, BookmarkItemsState>(
           builder: (context, state) {
             final isSelected = BlocProvider.of<BookmarkItemsCubit>(context)
-                .dataModel
+                .model
                 .contains(model);
             return IconButton(
               onPressed: () {

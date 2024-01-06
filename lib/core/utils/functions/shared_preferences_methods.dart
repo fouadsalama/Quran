@@ -22,21 +22,21 @@ abstract class LocalLastRead {
   }
 }
 
-abstract class LocalBookmark {
-  static late DataModel bookmarkDataSaved;
+// abstract class LocalBookmark {
+//   static late DataModel bookmarkDataSaved;
 
-  static Future<DataModel?> getLastBookmarkSurah() async {
-    final pref = await SharedPreferences.getInstance();
-    final jsonString = pref.getString('model');
-    return jsonString != null
-        ? DataModel.fromJson(jsonDecode(jsonString))
-        : null;
-  }
+//   static Future<DataModel?> getLastBookmarkSurah() async {
+//     final pref = await SharedPreferences.getInstance();
+//     final jsonString = pref.getString('model');
+//     return jsonString != null
+//         ? DataModel.fromJson(jsonDecode(jsonString))
+//         : null;
+//   }
 
-  static Future<void> loadLastBookmarkSurah() async {
-    DataModel? lastReadSurah = await getLastBookmarkSurah();
-    if (lastReadSurah != null) {
-      bookmarkDataSaved = lastReadSurah;
-    }
-  }
-}
+//   static Future<void> loadLastBookmarkSurah() async {
+//     DataModel? lastReadSurah = await getLastBookmarkSurah();
+//     if (lastReadSurah != null) {
+//       bookmarkDataSaved = lastReadSurah;
+//     }
+//   }
+// }

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../data/manger/cubit/bookmark_items_cubit.dart';
+import '../../../data/manger/bookmark_item_cubit/bookmark_items_cubit.dart';
+
 import 'bookmark_item_widget.dart';
 
 class CustomBookmarkListView extends StatelessWidget {
